@@ -1,1 +1,194 @@
-/* code here */
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Start Global Style --- */
+body{
+    font-family: "Quicksand", sans-serif;
+    background: url("../img/bg-corgiCoffeelatte.png");
+    background-size: cover;
+    color: #333;
+
+    overflow: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2{
+    font-family: "Changa One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #834d0c;
+
+    margin-bottom: 30px;
+}
+
+h1{
+    font-size: 4em;
+}
+
+p{
+    font-size: 1em;
+    font-weight: 600;
+
+    line-height: 1.5em;
+    margin-bottom: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}   
+
+.btn-primary {
+    background: #edb774;
+    color: #834d0c;
+    border: 1px solid #edb774;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* start header */
+header {
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 9;
+}
+
+.header-sec{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#mainLogo{
+    height: 100px;     
+    display: block;            ;
+}
+
+#mainLogo img{
+    height: 100%;
+}
+
+nav ul {
+    display: flex;
+    gap: 60px;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: #834d0c;
+    font-size: 1em;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    color: #edb774;
+}
+/* end header */
+
+/* start hero */
+.hero{
+    display: flex;
+    gap: 40px;
+    min-height: 100vh;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.hero-top{
+    text-align: center;
+}
+
+.hero-bottom {
+    display: flex;
+    justify-content: end;
+}
+
+.hero-bottom img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+
+    transform: scale(0.95);
+    animation: zoomIn 1s ease forwards;
+    animation-delay: 0.3s;
+}
+
+/* end hero */
+
+/* start footer */
+footer{
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    bottom: 0;
+    text-align: center;
+    background-color: rgba(255,255,255,0.2);
+    font-size: 12px;
+    color: #834d0c;
+    font-weight: 500;
+}
+/* end footer */
+
+/* init animation slide up */
+.animate-up {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: slideUpFade 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* delay animate */
+.animate-up.delay {
+  animation-delay: 0.3s;
+}
+
+/* keyframes */
+@keyframes slideUpFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  to {
+    transform: scale(1);
+  }
+}
