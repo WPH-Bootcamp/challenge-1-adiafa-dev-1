@@ -154,6 +154,21 @@ nav.top-nav ul li:nth-child(4) {
 nav.top-nav ul li:nth-child(5) {
     animation-delay: 0.7s;
 }
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: #834d0c;
+    display: block;
+    transition: 0.3s;
+}
 /* end header */
 
 /* start hero */
@@ -239,14 +254,14 @@ footer{
 
 /* init animation slide up */
 .animate-up {
-  opacity: 0;
-  transform: translateY(40px);
-  animation: slideUpFade 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: slideUpFade 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 /* delay animate */
 .animate-up.delay {
-  animation-delay: 0.3s;
+    animation-delay: 0.3s;
 }
 
 /* keyframes */
@@ -275,4 +290,73 @@ footer{
   to {
     transform: scale(1);
   }
+}
+
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+
+    h1{
+        font-size: 2.5em;
+    }
+
+    /* mobile menu show */
+    .menu-toggle {
+        display: flex;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translateY(8px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translateY(-8px);
+    }
+
+    /* hide main menu */
+    nav.top-nav {
+        position: absolute;
+        top: 100px;
+        right: 0;
+        width: 100%;
+        background: rgba(255,255,255,0.9);
+
+        opacity: 0;
+        transform: translateY(-10px);
+        pointer-events: none;
+
+        transition: 0.3s;
+    }
+
+    nav.top-nav ul {
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    nav.top-nav.active {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    nav.top-nav ul{
+        gap: 24px;
+    }
+
+    /* hero section */
+    .hero-bottom{
+        padding-top: 120px;
+    }
+
+    /* socmed section */
+    .socmed-wrapper {
+        right: 0px;
+        top: 25%;
+    }
+
 }

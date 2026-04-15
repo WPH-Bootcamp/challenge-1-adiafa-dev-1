@@ -24,6 +24,12 @@
                     <li><a href="#">Contact</a></li>
                 </ul>
             </nav>
+
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </header>
 
@@ -53,6 +59,7 @@
         </div>
     </main>
 
+    <!-- social media section -->
     <section class="socmed-wrapper">
         <a href="https://www.youtube.com/@corgicoffeelatte" target="_blank" class="youtube-socmed">
             <svg fill="currentColor" width="100%" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -80,10 +87,19 @@
         </a>
     </section>
 
+    <!-- footer section -->
     <footer>
         <div class="container footer-sec">© 2026 Corgi Coffeelatte. All Rights Reserved.</div>
     </footer>
     
+    <script>
+        const toggle = document.getElementById("menuToggle");
+        const nav = document.querySelector(".top-nav");
 
+        toggle.addEventListener("click", () => {
+            nav.classList.toggle("active");
+            toggle.classList.toggle("active");
+        });
+    </script>
 </body>
 </html>
